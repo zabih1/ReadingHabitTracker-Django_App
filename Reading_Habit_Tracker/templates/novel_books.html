@@ -6,10 +6,15 @@
 {% block content %}
 <div class="row mb-4">
     <div class="col">
-        <h1>Novels Books</h1>
-        <a href="{% url 'add_novel_book' %}" class="btn btn-primary">Add New Novel</a>
+        <div class="d-flex align-items-center mb-2">
+            <i class="fas fa-book fa-2x text-info me-2"></i>
+            <h1 class="fw-bold">Novels</h1>
+        </div>
+        <p class="text-muted">Browse your collection of captivating novels and literary works.</p>
+        <a href="{% url 'add_novel_book' %}" class="btn btn-primary mt-3">Add New Novel</a>
     </div>
 </div>
+
 
 <div class="row">
     <div class="col">
