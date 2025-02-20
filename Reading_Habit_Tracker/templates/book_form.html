@@ -1,0 +1,39 @@
+<!-- book_form.html -->
+
+{% extends 'base.html' %}
+{% block title %}Add Book - Personal Library{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col">
+        <h1>Add New {% if category == 'TECH' %}Tech Book{% else %}Novel{% endif %}</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Book Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <input type="hidden" name="category" value="{{ category }}">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Status</label>
+                        <select class="form-select" id="status" name="status">
+                            <option value="NOT_STARTED">Not Started</option>
+                            <option value="READING">Reading</option>
+                            <option value="DONE">Done</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Book</button>
+                    <a href="{% if category == 'TECH' %}{% url 'tech_books' %}{% else %}{% url 'novel_books' %}{% endif %}" class="btn btn-outline-secondary">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
