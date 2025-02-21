@@ -1,3 +1,5 @@
 # Reading Tracker
 
-![alt text](Dashboard.png)
+[Visit the App](https://zabih.pythonanywhere.com/)
+
+![Dashboard Preview](Dashboard.png)
